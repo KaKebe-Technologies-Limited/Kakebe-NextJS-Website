@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next"; // Added for SEO
 import { innovators } from "@/data/innovators";
 import { projects } from "@/data/projects";
 import Badge from "@/components/ui/Badge";
@@ -9,15 +10,43 @@ import SectionReveal from "@/components/ui/SectionReveal";
 import ProjectCard from "@/components/cards/ProjectCard";
 
 interface InnovatorProfilePageProps {
-  params: {
+  params: Promise<{
     slug: string;
+  }>;
+}
+
+/**
+ * SEO FIX: This function tells Google the specific Name and Bio 
+ * of the innovator for search results.
+ */
+export async function generateMetadata({ 
+  params 
+}: InnovatorProfilePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const innovator = innovators.find((i) => i.slug === slug);
+
+  return {
+    title: `${innovator?.name || "Innovator"} | Kakebe Hub`,
+    description: innovator?.bio.substring(0, 160) || "Learn more about this innovator on Kakebe Hub.",
   };
 }
 
-export default function InnovatorProfilePage({
+/**
+ * mandatory for "output: export" and helpful for "output: standalone"
+ */
+export async function generateStaticParams() {
+  return innovators.map((innovator) => ({
+    slug: innovator.slug,
+  }));
+}
+
+export default async function InnovatorProfilePage({
   params,
 }: InnovatorProfilePageProps) {
-  const innovator = innovators.find((i) => i.slug === params.slug);
+  // CORRECT: Using await for params in Next.js 15/16
+  const { slug } = await params;
+
+  const innovator = innovators.find((i) => i.slug === slug);
 
   if (!innovator) {
     notFound();

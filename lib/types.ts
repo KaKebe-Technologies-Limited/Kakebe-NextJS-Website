@@ -23,7 +23,12 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  category: "Management" | "Developers" | "mentor";
+  category: (
+    | "Management"
+    | "Developers"
+    | "Marketing Team"
+    | "Graphics Designers"
+  )[];
   image: string;
   bio: string;
   linkedin?: string;

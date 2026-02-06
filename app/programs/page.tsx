@@ -7,45 +7,43 @@ import SectionReveal from "@/components/ui/SectionReveal";
 import Button from "@/components/ui/Button";
 import CTA from "@/components/sections/CTA";
 import { programs } from "@/data/programs";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import { staggerContainer } from "@/lib/animations";
 
 export const FadeInUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 export default function ProgramsPage() {
   return (
-    <main className="pt-20">
+    // Increased padding-top to give fixed header more room
+    <main className="pt-24">
       {/* Page Hero */}
-      <section className="bg-gradient-to-br from-red-600 to-black text-white py-32">
+      <section className="bg-gradient-to-br from-red-600 via-red-700 to-black text-white py-32">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-7xl font-black mb-6">Our Programs</h1>
-          <p className="text-xl md:text-2xl text-red-100 max-w-3xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
+            Our Programs
+          </h1>
+          <p className="text-xl md:text-2xl text-red-100 max-w-3xl mx-auto font-medium">
             From training to incubation to tech services—we provide the
-            infrastructure for innovation.
+            infrastructure for innovation in Uganda.
           </p>
         </div>
       </section>
 
       {/* Programs Overview */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-5xl text-black font-bold text-center mb-4">
+            <h2 className="text-5xl text-black font-black text-center mb-4">
               How We Support <span className="text-red-600">Innovators</span>
             </h2>
-            <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
+            {/* Contrast Fix: text-gray-800 instead of gray-600 */}
+            <p className="text-xl text-gray-800 text-center max-w-3xl mx-auto mb-16 font-medium">
               Every program is designed with one goal: turning potential into
               real-world impact.
             </p>
@@ -63,16 +61,15 @@ export default function ProgramsPage() {
                 <ProgramCard program={program} />
               </motion.div>
             ))}
-            <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-red-600 to-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </motion.div>
         </div>
       </section>
 
       {/* Application Process */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-4xl text-black font-bold text-center mb-16">
+            <h2 className="text-4xl text-black font-black text-center mb-16">
               How to <span className="text-red-600">Join</span>
             </h2>
           </SectionReveal>
@@ -103,12 +100,17 @@ export default function ProgramsPage() {
               },
             ].map((item) => (
               <SectionReveal key={item.step}>
-                <div className="text-center">
-                  <div className="text-6xl font-black text-blue-600 mb-4">
+                <div className="text-center group">
+                  {/* Color Sync: text-red-600 replaces blue */}
+                  <div className="text-7xl font-black text-red-600 opacity-20 group-hover:opacity-100 transition-opacity duration-300 mb-2">
                     {item.step}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 -mt-8">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-700 font-medium">
+                    {item.description}
+                  </p>
                 </div>
               </SectionReveal>
             ))}
@@ -121,10 +123,10 @@ export default function ProgramsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <SectionReveal>
-              <h2 className="text-4xl text-black font-bold mb-6">
+              <h2 className="text-4xl text-black font-black mb-8">
                 Why Choose <span className="text-red-600">Kakebe</span>?
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {[
                   {
                     title: "World-Class Curriculum",
@@ -153,12 +155,15 @@ export default function ProgramsPage() {
                   },
                 ].map((benefit) => (
                   <div key={benefit.title} className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-2 mr-4" />
+                    {/* Color Sync: bg-red-600 replaces blue */}
+                    <div className="flex-shrink-0 w-3 h-3 bg-red-600 rounded-full mt-2 mr-4 shadow-[0_0_10px_rgba(220,38,38,0.4)]" />
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-1">
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-600">{benefit.description}</p>
+                      <p className="text-gray-700 font-medium">
+                        {benefit.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -166,18 +171,19 @@ export default function ProgramsPage() {
             </SectionReveal>
 
             <SectionReveal>
-              <div className="bg-gradient-to-br from-red-600 to-black rounded-2xl p-12 text-white">
-                <h3 className="text-3xl font-bold mb-6">
+              <div className="bg-gradient-to-br from-red-600 to-black rounded-3xl p-12 text-white shadow-2xl">
+                <h3 className="text-3xl font-black mb-6">
                   Ready to Start Your Journey?
                 </h3>
-                <p className="text-lg text-blue-100 mb-8">
+                {/* Color Sync: text-red-50 replaces blue-100 */}
+                <p className="text-lg text-red-50 mb-8 font-medium">
                   Applications are open for our next cohort. Don't miss your
                   chance to join Uganda's most dynamic innovation community.
                 </p>
                 <div className="space-y-4">
-                  <div className="flex items-center">
+                  <div className="flex items-center font-bold">
                     <svg
-                      className="w-6 h-6 mr-3"
+                      className="w-6 h-6 mr-3 text-red-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -185,15 +191,15 @@ export default function ProgramsPage() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={3}
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
                     <span>12-week intensive programs</span>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center font-bold">
                     <svg
-                      className="w-6 h-6 mr-3"
+                      className="w-6 h-6 mr-3 text-red-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -201,21 +207,23 @@ export default function ProgramsPage() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
+                        strokeWidth={3}
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
                     <span>No prior experience required</span>
                   </div>
                 </div>
-                <div className="mt-8">
+                <div className="mt-10">
                   <Link href="/contact">
                     <Button
                       variant="primary"
                       size="lg"
-                      className="w-full bg-white text-blackrun hover:bg-gray-100 text-black"
+                      className="w-full bg-white hover:bg-red-50 transition-colors py-4"
                     >
-                      <span className="text-black">Apply Now</span>
+                      <span className="text-black font-black uppercase tracking-wider">
+                        Apply Now
+                      </span>
                     </Button>
                   </Link>
                 </div>

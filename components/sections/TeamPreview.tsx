@@ -24,7 +24,7 @@ export const FadeInUp: Variants = {
 
 export default function TeamPreview() {
   const leadership = team
-    .filter((member) => member.category === "Management")
+    .filter((member) => member.category.includes("Management"))
     .slice(0, 3);
 
   return (

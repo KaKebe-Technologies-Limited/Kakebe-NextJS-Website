@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: ["Innovation", "Hub", "Uganda", "Technology", "Community"], // Add your keywords
   authors: [{ name: "Kakebe Hub Team" }],
-  creator: "Kakebe Hub",
+  creator: "Kakebe",
   openGraph: {
     type: "website",
     locale: "en_US",

@@ -295,7 +295,7 @@ export default function ContactPage() {
                   Come visit us and see innovation in action
                 </p>
                 <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.address)}`}
+                  href={`https://maps.app.goo.gl/spMLN7tLaB5wGF2Z6`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors"

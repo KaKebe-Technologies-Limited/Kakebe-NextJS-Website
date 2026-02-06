@@ -136,7 +136,7 @@ export default function ProjectsPage() {
             <SectionReveal>
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="grid lg:grid-cols-2">
-                  <div className="aspect-video lg:aspect-auto relative">
+                  <div className="relative h-80 lg:h-[450px] bg-gray-50">
                     <img
                       src={projects[0].image}
                       alt={projects[0].title}
@@ -187,7 +187,7 @@ export default function ProjectsPage() {
             </p>
             <a
               href="/contact"
-              className="inline-block px-10 py-5 bg-white text-indigo-600 hover:bg-gray-100 rounded-lg font-bold text-lg transition-colors shadow-xl"
+              className="inline-block px-10 py-5 bg-white text-black hover:bg-gray-100 rounded-lg font-bold text-lg transition-colors shadow-xl"
             >
               Start a Conversation
             </a>

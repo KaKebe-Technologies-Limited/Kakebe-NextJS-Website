@@ -24,12 +24,12 @@ export const FadeInUp: Variants = {
 export default function TeamPage() {
   const [filter, setFilter] = useState<string>("all");
 
-  // Improved filter logic: Convert both to lowercase to avoid "Leadership" vs "leadership" bugs
   const filteredTeam =
     filter === "all"
       ? team
-      : team.filter((m) => m.category.toLowerCase() === filter.toLowerCase());
-
+      : team.filter((m) =>
+          m.category.some((cat) => cat.toLowerCase() === filter.toLowerCase()),
+        );
   return (
     <main className="pt-20">
       {/* Page Hero */}
@@ -50,7 +50,8 @@ export default function TeamPage() {
               { id: "all", label: "All Team" },
               { id: "Management", label: "Management" },
               { id: "Developers", label: "Developers" },
-              { id: "mentor", label: "Mentors" },
+              { id: "Graphics Designers", label: "Graphics Designers" },
+              { id: "Marketing Team", label: "Marketing Team" },
             ].map((tab) => (
               <button
                 key={tab.id}

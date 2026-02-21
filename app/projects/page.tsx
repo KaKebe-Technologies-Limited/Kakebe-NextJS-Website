@@ -38,8 +38,8 @@ export default function ProjectsPage() {
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-red-600 to-black text-white py-32">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-7xl font-black mb-6">Our Projects</h1>
-          <p className="text-xl md:text-2xl text-red-100 max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-black mb-6">Our Projects</h1>
+          <p className="text-lg md:text-xl text-red-100 max-w-3xl mx-auto">
             Real solutions built by our innovators for real-world problems.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
               { label: "Lives Impacted", value: "10K+" },
             ].map((stat) => (
               <SectionReveal key={stat.label}>
-                <div className="text-4xl font-black text-indigo-600 mb-2">
+                <div className="text-3xl font-black text-indigo-600 mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-gray-600 uppercase tracking-wide">
@@ -123,10 +123,10 @@ export default function ProjectsPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-4xl text-black font-bold mb-4 text-center">
+            <h2 className="text-3xl text-black font-bold mb-4 text-center">
               Project Spotlight
             </h2>
-            <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16">
               Every month, we feature projects that are making exceptional
               impact in their communities.
             </p>
@@ -147,10 +147,10 @@ export default function ProjectsPage() {
                     <div className="inline-block px-4 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-semibold mb-4">
                       Featured Project
                     </div>
-                    <h3 className="text-3xl font-bold text-black mb-4">
+                    <h3 className="text-2xl font-bold text-black mb-4">
                       {projects[0].title}
                     </h3>
-                    <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                    <p className="text-gray-600 mb-6 leading-relaxed">
                       {projects[0].description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-8">
@@ -178,10 +178,10 @@ export default function ProjectsPage() {
       <section className="py-24 bg-gradient-to-br from-red-600 to-black text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <SectionReveal>
-            <h2 className="text-4xl md:text-5xl font-black mb-6">
+            <h2 className="text-3xl md:text-4xl font-black mb-6">
               Have a Project Idea?
             </h2>
-            <p className="text-xl text-indigo-100 mb-8">
+            <p className="text-lg text-indigo-100 mb-8">
               We're always looking for innovative solutions to real problems.
               Let's build something amazing together.
             </p>

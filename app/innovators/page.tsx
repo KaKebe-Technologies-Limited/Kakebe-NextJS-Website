@@ -37,8 +37,7 @@ export default function InnovatorsPage() {
             Our Innovators
           </h1>
           <p className="text-xl md:text-2xl text-red-100 max-w-3xl mx-auto">
-            Meet the builders, creators, and problem-solvers shaping Uganda's
-            tech future.
+            Meet the leaders and visionaries driving innovative projects that shape Uganda's tech future.
           </p>
         </div>
       </section>
@@ -55,7 +54,7 @@ export default function InnovatorsPage() {
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
-              All Innovators
+              All Project Leaders
             </button>
             <button
               onClick={() => setFilter("featured")}

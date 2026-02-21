@@ -26,28 +26,20 @@ export default function StorySection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
             <h2 className="text-5xl text-black font-bold mb-6">
-              How <span className="text-red-600">Kakebe</span> Began
+              About <span className="text-red-600">Kakebe</span>
             </h2>
             <div className="prose prose-lg text-gray-700 space-y-6">
               <p>
-                In 2018, a small group of engineers and educators gathered in a
-                cramped co-working space in Lira with a simple question: Why are
-                Uganda's brightest tech minds leaving the continent?
+                Kakebe Technologies is a youth-led technology company with headquarters in Lira City offering science and technological services to the public in a time-saving, fast and efficient way.
               </p>
               <p>
-                The answer was clear. Lack of access to quality training,
-                mentorship, and a community that believed in building locally.
+                We provide enhanced IT services to improve productivity and efficiency in businesses, organisations and companies, building on technologies to improve livelihood.
               </p>
               <p>
-                So we started Kakebe—not as a business, but as a movement. A
-                place where young technologists could learn by building, where
-                mentorship was hands-on, and where failure was part of the
-                process.
+                Kakebe builds your ideas to reality ranging from websites, mobile apps, robotics, management systems and offering internship trainings to different students in the region.
               </p>
               <p className="font-semibold text-gray-900">
-                Today, we've trained hundreds of innovators, launched dozens of
-                startups, and proven that world-class technology can—and
-                should—be built right here.
+                Started in 2020 from the inspiration of young people to grow the Northern Region with great and competent technologies to improve the livelihoods of the local people.
               </p>
             </div>
           </SectionReveal>

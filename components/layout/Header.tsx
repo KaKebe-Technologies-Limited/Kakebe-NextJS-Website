@@ -3,12 +3,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Navigation from "./Navigation";
 import { siteConfig } from "@/data/site";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Determine if we're on the home page
+  const isHomePage = pathname === "/";
+  
+  // For non-home pages, always show the scrolled (white) style
+  const isEffectivelyScrolled = !isHomePage || isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +30,7 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
+        isEffectivelyScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -37,7 +45,7 @@ export default function Header() {
             </span>
             <span
               className={`text-2xl font-bold transition-colors ${
-                isScrolled ? "text-black" : "text-white"
+                isEffectivelyScrolled ? "text-black" : "text-white"
               }`}
             >
               {siteConfig.name}
@@ -46,13 +54,13 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <Navigation isScrolled={isScrolled} />
+            <Navigation isScrolled={isEffectivelyScrolled} />
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden ${isScrolled ? "text-black" : "text-white"}`}
+            className={`md:hidden ${isEffectivelyScrolled ? "text-black" : "text-white"}`}
             aria-label="Toggle menu"
           >
             <svg

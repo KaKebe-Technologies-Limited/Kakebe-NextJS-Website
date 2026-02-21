@@ -25,10 +25,10 @@ export default function ProgramsPage() {
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-red-600 via-red-700 to-black text-white py-32">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">
             Our Programs
           </h1>
-          <p className="text-xl md:text-2xl text-red-100 max-w-3xl mx-auto font-medium">
+          <p className="text-lg md:text-xl text-red-100 max-w-3xl mx-auto font-medium">
             From training to incubation to tech services—we provide the
             infrastructure for innovation in Uganda.
           </p>
@@ -39,13 +39,12 @@ export default function ProgramsPage() {
       <section className="py-24 bg-white scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-5xl text-black font-black text-center mb-4">
-              How We Support <span className="text-red-600">Innovators</span>
+            <h2 className="text-4xl text-black font-black text-center mb-4">
+              Our <span className="text-red-600">Programs</span>
             </h2>
             {/* Contrast Fix: text-gray-800 instead of gray-600 */}
-            <p className="text-xl text-gray-800 text-center max-w-3xl mx-auto mb-16 font-medium">
-              Every program is designed with one goal: turning potential into
-              real-world impact.
+            <p className="text-lg text-gray-800 text-center max-w-3xl mx-auto mb-16 font-medium">
+              Community-driven programs empowering youths and fostering development across Northern Uganda through technology and innovation.
             </p>
           </SectionReveal>
 
@@ -65,11 +64,76 @@ export default function ProgramsPage() {
         </div>
       </section>
 
+      {/* Kakebe Innovation Center - Future Plan */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 to-black text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionReveal>
+            <h2 className="text-4xl font-black text-center mb-4">
+              Kakebe Innovation Center <span className="text-red-500">(KIC)</span>
+            </h2>
+            <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-16 font-medium">
+              Our Future Plan: Building the Kakebe Innovation Center in Lira City to redefine Northern Uganda as a regional hub.
+            </p>
+          </SectionReveal>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                title: "Tech-Driven Labs",
+                description: "Explore innovation hubs for robotics and AI, fostering groundbreaking ideas and transformative solutions.",
+                icon: "🔬",
+              },
+              {
+                title: "Creative Studios",
+                description: "Inspiring spaces for artists, designers, and creators, nurturing creativity and innovation across various mediums.",
+                icon: "🎨",
+              },
+              {
+                title: "Flexible Office Spaces",
+                description: "Tailored environments for startups and SMEs, promoting collaboration, innovation, and growth.",
+                icon: "🏢",
+              },
+              {
+                title: "Free Workspaces",
+                description: "Encouraging collaboration and innovation, offering open areas for spontaneous idea exchange.",
+                icon: "🆓",
+              },
+              {
+                title: "Event Spaces",
+                description: "Versatile venues for impactful gatherings, workshops, and networking events.",
+                icon: "🎪",
+              },
+              {
+                title: "Mentorship & Support",
+                description: "Providing guidance and resources for entrepreneurial journeys through mentorship programs.",
+                icon: "🤝",
+              },
+            ].map((feature) => (
+              <motion.div
+                key={feature.title}
+                variants={FadeInUp}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-colors"
+              >
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <div className="inline-block px-8 py-4 bg-red-600 rounded-xl">
+              <p className="text-white font-bold text-lg">Coming Soon to Lira City</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Application Process */}
       <section className="py-24 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-4xl text-black font-black text-center mb-16">
+            <h2 className="text-3xl text-black font-black text-center mb-16">
               How to <span className="text-red-600">Join</span>
             </h2>
           </SectionReveal>

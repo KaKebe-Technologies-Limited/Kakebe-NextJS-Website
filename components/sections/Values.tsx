@@ -27,11 +27,10 @@ export default function Values() {
       <div className="max-w-7xl mx-auto px-6">
         <SectionReveal>
           <h2 className="text-5xl text-black font-bold text-center mb-4">
-            What We <span className="text-red-600">Stand</span> For
+            Our Core <span className="text-red-600">Values</span>
           </h2>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
-            Our values aren't just words on a wall. They guide every decision,
-            every project, and every relationship we build.
+            The principles that guide every decision, project, and relationship we build.
           </p>
         </SectionReveal>
 

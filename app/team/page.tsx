@@ -50,7 +50,7 @@ export default function TeamPage() {
               { id: "all", label: "All Team" },
               { id: "Management", label: "Management" },
               { id: "Developers", label: "Developers" },
-              { id: "Graphics Designers", label: "Graphics Designers" },
+              { id: "Digital Content", label: "Digital Content" },
               { id: "Marketing Team", label: "Marketing Team" },
             ].map((tab) => (
               <button

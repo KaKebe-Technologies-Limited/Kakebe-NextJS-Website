@@ -15,7 +15,7 @@ export default function CTA() {
 
       <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
         <SectionReveal>
-          <h2 className="text-5xl md:text-6xl font-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
             Ready to Build the Future?
           </h2>
           <p className="text-xl md:text-2xl text-gray-100 mb-12 max-w-3xl mx-auto">

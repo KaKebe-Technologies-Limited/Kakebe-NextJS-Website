@@ -25,16 +25,16 @@ export const FadeInUp: Variants = {
 export default function TeamPreview() {
   const leadership = team
     .filter((member) => member.category.includes("Management"))
-    .slice(0, 3);
+    .slice(0, 6);
 
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <SectionReveal>
-          <h2 className="text-5xl text-black font-bold mb-4">
+          <h2 className="text-4xl text-black font-bold mb-4">
             Led by Visionaries
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mb-16">
+          <p className="text-lg text-gray-600 max-w-3xl mb-16">
             Our team combines deep technical expertise with a passion for
             building communities and launching careers.
           </p>

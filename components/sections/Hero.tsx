@@ -37,14 +37,14 @@ export default function Hero() {
       >
         <motion.h1
           variants={FadeInUp}
-          className="text-6xl md:text-8xl font-black tracking-tight mb-6"
+          className="text-3xl md:text-5xl font-black tracking-tight mb-6"
         >
           {siteConfig.tagline}
         </motion.h1>
 
         <motion.p
           variants={FadeInUp}
-          className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12"
+          className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12"
         >
           {siteConfig.description}
         </motion.p>

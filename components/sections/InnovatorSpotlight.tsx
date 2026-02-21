@@ -29,10 +29,9 @@ export default function InnovatorsSpotlight() {
     <section className="py-24 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <SectionReveal>
-          <h2 className="text-5xl font-bold mb-4">Meet Our Innovators</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mb-16">
-            These are the builders, creators, and problem-solvers shaping
-            Uganda's tech future.
+          <h2 className="text-4xl font-bold mb-4">Meet Our Innovators</h2>
+          <p className="text-lg text-gray-400 max-w-3xl mb-16">
+            These are the leaders and visionaries driving innovative projects that shape Uganda's tech future.
           </p>
         </SectionReveal>
 
@@ -55,7 +54,7 @@ export default function InnovatorsSpotlight() {
             href="/innovators"
             className="inline-block px-8 py-4 bg-white text-gray-900 hover:bg-gray-100 rounded-lg font-semibold transition-colors"
           >
-            View All Innovators
+            View Innovators
           </Link>
         </SectionReveal>
       </div>

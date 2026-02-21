@@ -27,7 +27,7 @@ export interface TeamMember {
     | "Management"
     | "Developers"
     | "Marketing Team"
-    | "Graphics Designers"
+    | "Digital Content"
   )[];
   image: string;
   bio: string;

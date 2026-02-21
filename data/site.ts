@@ -3,7 +3,7 @@ import { SiteConfig } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
   name: "Kakebe Technologies",
-  tagline: "Building the Next Generation of Innovators",
+  tagline: "Building the Next Gen of Innovators",
   description:
     "An innovation hub where young technologists are equipped, mentored, and launched into the future.",
   email: "service@kakebe.tech",

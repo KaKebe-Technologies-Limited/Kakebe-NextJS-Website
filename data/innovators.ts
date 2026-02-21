@@ -19,10 +19,11 @@ export const innovators: Innovator[] = [
     slug: "Jerome Oscar",
     name: "Jerome Oscar",
     tagline: "IoT Engineer & Hardware Hacker",
-    image: "/images/innovators/oscarjerome.png",
+    image: "/images/team/jerome.jpeg",
     bio: "Jerome designs low-cost IoT solutions for urban farming and resource management.",
     projects: ["FarmSense", "WaterWatch"],
     skills: ["Arduino", "C++", "MQTT", "Node.js"],
     featured: true,
   },
+  
 ];

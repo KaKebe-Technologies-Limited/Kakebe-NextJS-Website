@@ -17,7 +17,7 @@ export default function Footer() {
                 </span>
               </div>
               <span className="text-2xl font-bold text-white">
-                Kakebe Technologies
+                Kakebe
               </span>
             </Link>
 

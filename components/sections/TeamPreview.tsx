@@ -4,8 +4,8 @@ import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import SectionReveal from "@/components/ui/SectionReveal";
 import TeamMemberCard from "@/components/cards/TeamMemberCard";
-import { team } from "@/data/team";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import type { TeamMember } from "@/lib/types";
+import { staggerContainer } from "@/lib/animations";
 
 export const FadeInUp: Variants = {
   hidden: {
@@ -22,7 +22,7 @@ export const FadeInUp: Variants = {
   },
 };
 
-export default function TeamPreview() {
+export default function TeamPreview({ team }: { team: TeamMember[] }) {
   const leadership = team
     .filter((member) => member.category.includes("Management"))
     .slice(0, 6);

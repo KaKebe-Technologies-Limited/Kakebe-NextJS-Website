@@ -2,7 +2,6 @@
 
 import { motion, Variants } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
-import { siteConfig } from "@/data/site";
 import Link from "next/link";
 
 export const FadeInUp: Variants = {
@@ -20,7 +19,16 @@ export const FadeInUp: Variants = {
   },
 };
 
-export default function Hero() {
+interface HeroProps {
+  headline: string
+  subheadline: string
+  cta1Label?: string
+  cta1Href?: string
+  cta2Label?: string
+  cta2Href?: string
+}
+
+export default function Hero({ headline, subheadline, cta1Label = 'Meet Our Innovators', cta1Href = '/innovators', cta2Label = 'Explore Programs', cta2Href = '/programs' }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-red-600 via-black to-gray-900 text-white overflow-hidden">
       {/* Background pattern */}
@@ -39,28 +47,28 @@ export default function Hero() {
           variants={FadeInUp}
           className="text-3xl md:text-5xl font-black tracking-tight mb-6"
         >
-          {siteConfig.tagline}
+          {headline}
         </motion.h1>
 
         <motion.p
           variants={FadeInUp}
           className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12"
         >
-          {siteConfig.description}
+          {subheadline}
         </motion.p>
 
         <motion.div variants={FadeInUp} className="flex gap-4 justify-center">
           <Link
-            href="/innovators"
+            href={cta1Href}
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors"
           >
-            Meet Our Innovators
+            {cta1Label}
           </Link>
           <Link
-            href="/programs"
+            href={cta2Href}
             className="px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-black rounded-lg font-semibold transition-all"
           >
-            Explore Programs
+            {cta2Label}
           </Link>
         </motion.div>
       </motion.div>

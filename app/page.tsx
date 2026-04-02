@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import DBIPSection from "@/components/sections/DBIPSection";
 import AboutPreview from "@/components/sections/AboutPreview";
 import WhatWeDo from "@/components/sections/WhatWeDo";
 import InnovatorsSpotlight from "@/components/sections/InnovatorSpotlight";
@@ -7,20 +8,43 @@ import Values from "@/components/sections/Values";
 import ImpactMetrics from "@/components/sections/ImpactMetrics";
 import CTA from "@/components/sections/CTA";
 import ProgramCard from "@/components/cards/ProgramCard";
-import { programs } from "@/data/programs";
 import Link from "next/link";
+import {
+  getHeroSection,
+  getMetrics,
+  getValues,
+  getTeamMembers,
+  getInnovators,
+  getPrograms,
+} from "@/lib/data-access";
 
-export default function Home() {
-  // Get first 4 programs for homepage display
+export default async function Home() {
+  const [hero, metrics, values, team, innovators, programs] = await Promise.all([
+    getHeroSection(),
+    getMetrics(),
+    getValues(),
+    getTeamMembers(),
+    getInnovators(),
+    getPrograms(),
+  ]);
+
   const featuredPrograms = programs.slice(0, 4);
 
   return (
     <main>
-      <Hero />
+      <Hero
+        headline={hero.headline}
+        subheadline={hero.subheadline}
+        cta1Label={hero.cta1Label}
+        cta1Href={hero.cta1Href}
+        cta2Label={hero.cta2Label}
+        cta2Href={hero.cta2Href}
+      />
+      <DBIPSection />
       <AboutPreview />
       <WhatWeDo />
-      <ImpactMetrics />
-      
+      <ImpactMetrics metrics={metrics} />
+
       {/* Featured Programs Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -50,9 +74,9 @@ export default function Home() {
         </div>
       </section>
 
-      <InnovatorsSpotlight />
-      <TeamPreview />
-      <Values />
+      <InnovatorsSpotlight innovators={innovators} />
+      <TeamPreview team={team} />
+      <Values values={values} />
       <CTA />
     </main>
   );

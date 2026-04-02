@@ -3,8 +3,8 @@
 
 import { motion, Variants } from "framer-motion";
 import SectionReveal from "@/components/ui/SectionReveal";
-import { values } from "@/data/values";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import type { Value } from "@/lib/types";
+import { staggerContainer } from "@/lib/animations";
 
 export const FadeInUp: Variants = {
   hidden: {
@@ -21,7 +21,7 @@ export const FadeInUp: Variants = {
   },
 };
 
-export default function Values() {
+export default function Values({ values }: { values: Value[] }) {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">

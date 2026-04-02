@@ -80,7 +80,7 @@ export const team: TeamMember[] = [
     category: ["Developers"],
     image: "/images/team/Phillip.jpeg",
     bio: "Ayo Philip is a web developer focused on building responsive and user-friendly web applications at Kakebe.",
-    linkedin: "https://linkedin.com/in/ayophilip",
+    linkedin: "https://ug.linkedin.com/in/philipayo",
   },
   {
     id: "6",

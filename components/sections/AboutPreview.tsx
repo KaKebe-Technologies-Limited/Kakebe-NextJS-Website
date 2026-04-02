@@ -34,7 +34,7 @@ export default function AboutPreview() {
           >
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/hero/kakebe.jpg"
+                src="/images/hero/camp.jpg"
                 alt="Kakebe Innovation Hub"
                 fill
                 className="object-cover"

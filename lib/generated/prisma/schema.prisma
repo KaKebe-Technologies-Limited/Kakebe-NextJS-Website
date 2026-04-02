@@ -1,0 +1,160 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model SiteConfig {
+  id           Int      @id @default(1)
+  name         String   @default("Kakebe Technologies")
+  tagline      String   @default("")
+  description  String   @default("")
+  email        String   @default("")
+  phone        String   @default("")
+  address      String   @default("")
+  twitter      String   @default("")
+  linkedin     String   @default("")
+  github       String   @default("")
+  faviconUrl   String   @default("/favicon.png")
+  logoUrl      String   @default("")
+  primaryColor String   @default("#dc2626")
+  formspreeId  String   @default("xkorrnno")
+  updatedAt    DateTime @updatedAt
+}
+
+model NavItem {
+  id    Int    @id @default(autoincrement())
+  label String
+  href  String
+  order Int    @default(0)
+}
+
+model FooterConfig {
+  id            Int      @id @default(1)
+  brandText     String   @default("")
+  copyrightName String   @default("Kakebe Technologies")
+  exploreLinks  String   @default("") // JSON array
+  programLinks  String   @default("") // JSON array
+  updatedAt     DateTime @updatedAt
+}
+
+model HeroSection {
+  id          Int      @id @default(1)
+  headline    String   @default("")
+  subheadline String   @default("")
+  cta1Label   String   @default("")
+  cta1Href    String   @default("")
+  cta2Label   String   @default("")
+  cta2Href    String   @default("")
+  imageUrl    String   @default("")
+  updatedAt   DateTime @updatedAt
+}
+
+model TeamMember {
+  id         Int      @id @default(autoincrement())
+  name       String
+  role       String
+  categories String   @default("[]") // JSON array
+  image      String   @default("")
+  bio        String   @default("")
+  linkedin   String   @default("")
+  twitter    String   @default("")
+  order      Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Program {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String   @default("")
+  icon        String   @default("")
+  features    String   @default("[]") // JSON array
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  description String   @default("")
+  category    String   @default("")
+  image       String   @default("")
+  tags        String   @default("[]") // JSON array
+  innovators  String   @default("[]") // JSON array of names
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Innovator {
+  id        Int      @id @default(autoincrement())
+  slug      String   @unique
+  name      String
+  tagline   String   @default("")
+  image     String   @default("")
+  bio       String   @default("")
+  projects  String   @default("[]") // JSON array
+  skills    String   @default("[]") // JSON array
+  quote     String   @default("")
+  featured  Boolean  @default(false)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Metric {
+  id     Int    @id @default(autoincrement())
+  label  String
+  value  String
+  suffix String @default("")
+  prefix String @default("")
+  order  Int    @default(0)
+}
+
+model Value {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String @default("")
+  icon        String @default("")
+  order       Int    @default(0)
+}
+
+model AboutContent {
+  id         Int      @id @default(1)
+  story      String   @default("")
+  mission    String   @default("")
+  vision     String   @default("")
+  milestones String   @default("[]") // JSON array
+  updatedAt  DateTime @updatedAt
+}
+
+model PageSEO {
+  id          Int      @id @default(autoincrement())
+  page        String   @unique
+  title       String   @default("")
+  description String   @default("")
+  ogImage     String   @default("")
+  updatedAt   DateTime @updatedAt
+}
+
+model AdminUser {
+  id           Int      @id @default(1)
+  email        String   @unique
+  passwordHash String
+  updatedAt    DateTime @updatedAt
+}
+
+model ActivityLog {
+  id        Int      @id @default(autoincrement())
+  action    String
+  section   String
+  details   String   @default("")
+  createdAt DateTime @default(now())
+}

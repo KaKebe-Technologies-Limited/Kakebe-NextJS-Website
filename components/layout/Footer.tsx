@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { siteConfig } from "@/data/site";
+import type { SiteConfig } from "@/lib/types";
 
-export default function Footer() {
+export default function Footer({ siteConfig }: { siteConfig: SiteConfig }) {
   const currentYear = new Date().getFullYear();
 
   return (

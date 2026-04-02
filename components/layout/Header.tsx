@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Navigation from "./Navigation";
-import { siteConfig } from "@/data/site";
 
-export default function Header() {
+export default function Header({ siteName }: { siteName: string }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -48,7 +47,7 @@ export default function Header() {
                 isEffectivelyScrolled ? "text-black" : "text-white"
               }`}
             >
-              {siteConfig.name}
+              {siteName}
             </span>
           </Link>
 

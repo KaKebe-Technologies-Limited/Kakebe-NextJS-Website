@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/Preston/Desktop/Kakebe-NextJS-Website -maxdepth 2 -type f \\\\\\(-name package.json -o -name next.config.ts -o -name tailwind.config.ts -o -name .env* -o -name schema.prisma \\\\\\))",
+      "Bash(find /c/Users/Preston/Desktop/Kakebe-NextJS-Website -type f -name *.prisma -o -name .env* -o -name *auth*)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -r bcryptjs /c/Users/Preston/Desktop/Kakebe-NextJS-Website --include=*.ts --include=*.tsx)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const c=require\\(''crypto''\\);console.log\\(c.randomBytes\\(32\\).toString\\(''hex''\\)\\)\")",
+      "Bash(npx prisma:*)",
+      "Bash(del:*)",
+      "Bash(rm:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx ts-node:*)",
+      "Bash(npm run:*)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(__NEW_LINE_14db467329a308ba__ echo:*)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code} | Location: %{redirect_url}\\\\n\" http://localhost:3001/admin)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" http://localhost:3001/admin/login)",
+      "Bash(curl -s -X POST http://localhost:3001/api/auth/login -H \"Content-Type: application/json\" -d '{\"\"email\"\":\"\"admin@kakebe.tech\"\",\"\"password\"\":\"\"wrongpassword\"\"}' -w \"\\\\nStatus: %{http_code}\\\\n\")",
+      "Bash(__NEW_LINE_c2708c38c2896029__ echo:*)",
+      "Bash(curl -s -X POST http://localhost:3001/api/auth/login -H \"Content-Type: application/json\" -d '{\"\"email\"\":\"\"admin@kakebe.tech\"\",\"\"password\"\":\"\"admin123\"\"}' -c /tmp/admin_cookies.txt -w \"\\\\nStatus: %{http_code}\\\\n\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" -b /tmp/admin_cookies.txt http://localhost:3001/admin)",
+      "Bash(__NEW_LINE_f0d8b344f56c4ea8__ echo:*)",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code}\\\\n\" -b /tmp/admin_cookies.txt http://localhost:3001/admin/settings)",
+      "Bash(curl -s -X POST http://localhost:3001/api/auth/logout -b /tmp/admin_cookies.txt -c /tmp/admin_cookies_after_logout.txt -w \"\\\\nStatus: %{http_code}\\\\n\")",
+      "Bash(curl -s -o /dev/null -w \"Status: %{http_code} | Location: %{redirect_url}\\\\n\" -b /tmp/admin_cookies_after_logout.txt http://localhost:3001/admin)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}

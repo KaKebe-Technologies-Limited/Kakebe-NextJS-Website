@@ -4,8 +4,8 @@ import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import SectionReveal from "@/components/ui/SectionReveal";
 import InnovatorCard from "@/components/cards/InnovatorCard";
-import { innovators } from "@/data/innovators";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import type { Innovator } from "@/lib/types";
+import { staggerContainer } from "@/lib/animations";
 
 export const FadeInUp: Variants = {
   hidden: {
@@ -22,7 +22,7 @@ export const FadeInUp: Variants = {
   },
 };
 
-export default function InnovatorsSpotlight() {
+export default function InnovatorsSpotlight({ innovators }: { innovators: Innovator[] }) {
   const featured = innovators.filter((i) => i.featured);
 
   return (
